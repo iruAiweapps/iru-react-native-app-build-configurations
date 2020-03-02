@@ -31,7 +31,7 @@ public class AppBuildConfigurationsModule extends ReactContextBaseJavaModule {
     public Map<String, Object> getConstants() {
         final Map<String, Object> constants = new HashMap<>();
 
-        constants.put("BuildType", flavor + buildType);
+        constants.put("BuildType", flavor + '.' + buildType);
 
         return constants;
     }

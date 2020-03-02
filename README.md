@@ -50,7 +50,7 @@ Other dependencies will be linked automatically.
 import AppConfiguration from 'iru-react-native-app-build-configurations';
 
 // This module gets a BuildType string from the project's build configuration.
-// BuildType format is '{configuration_type}{configuration_name}', where
+// BuildType format is '{configuration_type}.{configuration_name}', where
 // configuration_type: dev|prod - switch API server
 // configuration_name: debug|adhoc|release
 
