@@ -8,7 +8,7 @@
 
 #### RN 60.X
 
-`$ cd ios && pod install && && cd ..`
+`$ cd ios && pod install && cd ..`
 
 Other dependencies will be linked automatically.
 
