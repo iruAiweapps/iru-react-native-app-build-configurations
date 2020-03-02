@@ -6,6 +6,14 @@
 
 ### Mostly automatic installation
 
+#### RN 60.X
+
+`$ cd ios && pod install && && cd ..`
+
+Other dependencies will be linked automatically.
+
+#### RN <= 59.9
+
 `$ react-native link iru-react-native-app-build-configurations`
 
 ### Manual installation
@@ -35,9 +43,74 @@
 
 
 ## Usage
-```javascript
-import AppBuildConfigurations from 'iru-react-native-app-build-configurations';
 
-// TODO: What to do with the module?
-AppBuildConfigurations;
+### React native
+
+```javascript
+import AppConfiguration from 'iru-react-native-app-build-configurations';
+
+// This module gets a BuildType string from the project's build configuration.
+// BuildType format is '{configuration_type}{configuration_name}', where
+// configuration_type: dev|prod - switch API server
+// configuration_name: debug|adhoc|release
+
+const { BuildType } = AppConfiguration;
+
+const devKey = 'dev';
+const prodKey = 'prod';
+
+const debugConfigurationKey = 'debug';
+const adhocConfigurationKey = 'adhoc';
+const releaseConfigurationKey = 'release';
+
+const DEV = BuildType.includes(devKey);
+const PROD = BuildType.includes(prodKey);
+
+const DEBUG = BuildType.includes(debugConfigurationKey);
+const ADHOC = BuildType.includes(adhocConfigurationKey);
+const RELEASE = BuildType.includes(releaseConfigurationKey);
+
+export {
+    DEV,
+    PROD,
+    DEBUG,
+    ADHOC,
+    RELEASE,
+};
+```
+
+### Android configuration
+
+Need to create buildTypes and productFlavors. They are automatically will be send to react native app part.
+
+For example:
+
+```text
+buildTypes {
+        debug { }
+        adhoc { }
+        release { }
+    }
+    flavorDimensions "default"
+    productFlavors {
+        prod { }
+        dev { }
+    }
+```
+
+### Ios configuration
+
+Need to add "ConfigurationName" property in info.plist file with String value in format {configuration_type}{configuration_name}. For setup this string need to create custom property in project and setup it value for any build configuration, in .plist file it can be used by "$(CONFIGURATION_NAME)".
+
+For example:
+
+```xml
+<plist version="1.0">
+    <dict>
+        ...
+        <key>ConfigurationName</key>
+        <string>$(CONFIGURATION_NAME)</string>
+        ...
+    </dict>
+</plist>
 ```
