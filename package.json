@@ -15,13 +15,9 @@
   "keywords": [
     "react-native"
   ],
-  "author": {
-    "name": "Ilya",
-    "email": "ilya.rysalovskiy@gmail.com"
-  },
+  "author": "Ilya <ilya.rysalovskiy@gmail.com>",
   "license": "MIT",
   "licenseFilename": "LICENSE",
-  "readmeFilename": "README.md",
   "peerDependencies": {
     "react": "^16.8.1",
     "react-native": ">=0.59.0-rc.0 <1.0.x"
@@ -29,5 +25,9 @@
   "devDependencies": {
     "react": "^16.8.3",
     "react-native": "^0.59.10"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/iruAiweapps/iru-react-native-app-build-configurations/issues"
+  },
+  "homepage": "https://github.com/iruAiweapps/iru-react-native-app-build-configurations#readme"
 }
