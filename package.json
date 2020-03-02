@@ -1,7 +1,7 @@
 {
   "name": "iru-react-native-app-build-configurations",
   "title": "Iru React Native App Build Configurations",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Package for managing application configurations from react-native code",
   "main": "index.js",
   "scripts": {
