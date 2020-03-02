@@ -2,7 +2,7 @@
   "name": "iru-react-native-app-build-configurations",
   "title": "Iru React Native App Build Configurations",
   "version": "1.0.0",
-  "description": "TODO",
+  "description": "Package for managing application configurations from react-native code",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

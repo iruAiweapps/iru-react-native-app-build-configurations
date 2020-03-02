@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.reactlibrary.appbuildconfigurations;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -11,9 +11,17 @@ import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
 
 public class AppBuildConfigurationsPackage implements ReactPackage {
+    private String buildType;
+    private String flavor;
+
+    public AppBuildConfigurationsPackage(String buildType, String flavor) {
+        this.buildType = buildType;
+        this.flavor = flavor;
+    }
+
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Arrays.<NativeModule>asList(new AppBuildConfigurationsModule(reactContext));
+        return Arrays.<NativeModule>asList(new AppBuildConfigurationsModule(reactContext, this.buildType, this.flavor));
     }
 
     @Override
